@@ -1,0 +1,19 @@
+---
+import json from "data/me.json";
+import HeadingTitle from "components/HeadingTitle.astro";
+import HeadingSubtitle from "components/HeadingSubtitle.astro";
+---
+
+<main
+  class="h-full py-4 flex grow wrap flex-col gap-y-[15vh] md:gap-y-0 md:flex-row md:justify-between"
+>
+  <section class="basis-2/4">
+    <HeadingTitle label={json.profession} />
+    <HeadingSubtitle label={json.profession_quote} />
+  </section>
+
+  <section class="basis-2/4 self-end">
+    <HeadingTitle label={json.full_name} position="right" />
+    <HeadingSubtitle label={json.full_name_quote} position="right" />
+  </section>
+</main>

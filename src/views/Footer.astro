@@ -1,0 +1,31 @@
+---
+import Navigation from "components/Navigation.astro";
+import NavigationItem from "components/NavigationItem.astro";
+import Link from "components/Link.astro";
+import json from "data/me.json";
+---
+
+<footer>
+  <Navigation>
+    <NavigationItem
+      >My resume can be found on <Link href={json.linkedin} label="LinkedIn" />.
+    </NavigationItem>
+
+    <NavigationItem
+      >Most of my code lives on <Link href={json.github} label="GitHub" />.
+    </NavigationItem>
+
+    <NavigationItem
+      >Sharing some and nothing on <Link href={json.twitter} label="Twitter" /> from
+      time to time.</NavigationItem
+    >
+
+    <NavigationItem
+      >Want to get in touch? <Link
+        href={`mailto:${json.email}`}
+        label={json.email}
+      />
+      is my e-mail.</NavigationItem
+    >
+  </Navigation>
+</footer>

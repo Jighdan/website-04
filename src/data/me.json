@@ -1,14 +1,14 @@
 {
-  "first_name": "Reinny",
-  "last_name": "Almonte Ramos",
+  "full_name": "Reinny Almonte Ramos",
+  "full_name_quote": "a lifetime apprentice",
   "email": "reinny.almonte@pm.me",
   "quote": "Everything can be Improved",
   "profession": "Software Craftsman",
-  "profession_quote": "Lifetime Apprentice",
+  "profession_quote": "seeking constant improvement",
   "location": "the Dominican Republic 🇩🇴",
   "career": {
-    "role": "Software Engineer Junior III",
-    "company": "GBH"
+    "role": "Front End Developer",
+    "company": "HOO KOO E KOO"
   },
   "linkedin": "https://www.linkedin.com/in/jighdan/",
   "github": "https://github.com/jighdan",

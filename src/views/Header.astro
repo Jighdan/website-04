@@ -1,0 +1,19 @@
+---
+import Navigation from "components/Navigation.astro";
+import NavigationItem from "components/NavigationItem.astro";
+import json from "data/me.json";
+---
+
+<header>
+  <Navigation>
+    <NavigationItem>Firmly believer that: <i>"{json.quote}"</i></NavigationItem>
+
+    <NavigationItem
+      >Collaborating with {json.career.company} as a {
+        json.career.role
+      }.</NavigationItem
+    >
+
+    <NavigationItem>Spending my days at {json.location}.</NavigationItem>
+  </Navigation>
+</header>
