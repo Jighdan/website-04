@@ -1,9 +1,17 @@
 ---
+import cx from "classnames";
+
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const className = cx(
+  "h-full w-full px-6 py-8",
+  "flex justify-center",
+  "child:h-full child:max-w-2xl child:w-full"
+);
 ---
 
 <!DOCTYPE html>
@@ -16,7 +24,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="h-full w-full child:h-full px-6 py-8">
+    <div class={className}>
       <slot />
     </div>
 

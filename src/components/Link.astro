@@ -7,4 +7,9 @@ export interface Props {
 const { href, label } = Astro.props;
 ---
 
-<a href={href} rel="norefferer noopener" class="underline">{label}</a>
+<a
+  href={href}
+  rel="norefferer noopener"
+  class="underline transition hover:-translate-y-1"
+  target="_blank">{label}</a
+>

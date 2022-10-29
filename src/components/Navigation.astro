@@ -1,5 +1,19 @@
+---
+import cx from "classnames";
+
+export interface Props {
+  isCentered?: boolean;
+}
+
+const { isCentered = false } = Astro.props;
+
+const baseClassName =
+  "w-full flex gap-x-10 overflow-x-auto snap-x scroll-smooth";
+const className = cx(baseClassName, { "justify-center": !!isCentered });
+---
+
 <nav>
-  <ul class="flex gap-x-10 overflow-x-auto snap-x scroll-smooth">
+  <ul class={className}>
     <slot />
   </ul>
 </nav>

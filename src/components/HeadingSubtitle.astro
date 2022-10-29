@@ -8,7 +8,7 @@ export interface Props {
 
 const { label, position = "left" } = Astro.props;
 const content = position === "left" ? `// ${label}` : `${label} //`;
-const className = cx("text-lg", {
+const className = cx("text-lg lowercase", {
   "text-left": position === "left",
   "text-right": position === "right",
 });
