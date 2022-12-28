@@ -1,0 +1,34 @@
+---
+import cx from "classnames";
+
+type Variant = "3xl" | "2xl" | "lg" | "p";
+type Element = "h1" | "h2" | "h3" | "p" | "span";
+
+export interface Props {
+  type?: Variant;
+  bold?: boolean;
+}
+
+const { type = "p", bold = false } = Astro.props;
+
+const elementMap: Map<Variant, Element> = new Map([
+  ["3xl", "span"],
+  ["2xl", "h1"],
+  ["lg", "h2"],
+  ["p", "p"],
+]);
+
+const className = cx({
+  "text-10xl": type === "3xl",
+  "text-6xl": type === "2xl",
+  "text-4xl": type === "lg",
+  "text-xl": type === "p",
+  "font-medium": !!bold,
+});
+
+const Element = elementMap.get(type) || type;
+---
+
+<Element class={className}>
+  <slot />
+</Element>
