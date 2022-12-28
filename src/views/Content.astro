@@ -1,5 +1,13 @@
 ---
 import json from "data/me.json";
+import Marquee from "components/organisms/Marquee.astro";
 ---
 
-<main></main>
+<main>
+  <Marquee
+    items={[
+      { text: "First Name - Last Name -", direction: "forward" },
+      { text: "First Name - Last Name -", direction: "reverse" },
+    ]}
+  />
+</main>
