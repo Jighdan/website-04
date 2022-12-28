@@ -1,0 +1,14 @@
+---
+export interface Props {
+  href: string;
+  isExternal?: boolean;
+  className?: string;
+}
+
+const { href, isExternal = false, className } = Astro.props;
+
+const target = isExternal ? "_blank" : "_self";
+const rel = isExternal ? "noopener nofollow" : "";
+---
+
+<a class={className} href={href} target={target} rel={rel}><slot /></a>
