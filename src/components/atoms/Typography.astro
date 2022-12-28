@@ -7,9 +7,10 @@ type Element = "h1" | "h2" | "h3" | "p" | "span";
 export interface Props {
   type?: Variant;
   bold?: boolean;
+  className?: string;
 }
 
-const { type = "p", bold = false } = Astro.props;
+const { type = "p", bold = false, className } = Astro.props;
 
 const elementMap: Map<Variant, Element> = new Map([
   ["3xl", "span"],
@@ -18,7 +19,7 @@ const elementMap: Map<Variant, Element> = new Map([
   ["p", "p"],
 ]);
 
-const className = cx({
+const styles = cx(className, {
   "text-10xl": type === "3xl",
   "text-6xl": type === "2xl",
   "text-4xl": type === "lg",
@@ -29,6 +30,6 @@ const className = cx({
 const Element = elementMap.get(type) || type;
 ---
 
-<Element class={className}>
+<Element class={styles}>
   <slot />
 </Element>

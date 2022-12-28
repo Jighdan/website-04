@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
+        hidden: "0px",
         "10xl": "9vw",
+      },
+      flex: {
+        unset: "0 0 auto",
       },
     },
   },
