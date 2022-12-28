@@ -18,6 +18,7 @@ export class MarqueeAnimations implements Animation {
 
 			const direction = rail?.getAttribute(this.directionAttribute);
 			const willMoveForward = direction === "forward";
+			console.info({ willMoveForward })
 
 			const distance = rail && text ? this.getDistanceToTranslate(text, rail) : 0;
 			const time = distance / this.rate;
