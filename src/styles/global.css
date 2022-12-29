@@ -4,5 +4,5 @@ body {
 }
 
 body {
-  @apply font-sans text-black bg-white;
+  @apply font-serif text-black bg-white;
 }
