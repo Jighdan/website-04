@@ -3,46 +3,44 @@ import Typography from "components/atoms/Typography.astro";
 import cx from "classnames";
 import { CLASSES } from "constants/classes";
 
-interface Marquee {
-  text: string;
-  direction: "forward" | "reverse";
-}
-
 export interface Props {
-  items: Marquee[];
   rate?: number;
   repeatText?: number;
+  direction?: "forward" | "reverse";
+  className?: string;
 }
 
-const { items, repeatText = 3 } = Astro.props;
+const {
+  repeatText = 5,
+  rate = 200,
+  direction = "forward",
+  className,
+} = Astro.props;
 
-const textPlaceholder = new Array(repeatText).fill(undefined);
+const placeholders = new Array(repeatText).fill(undefined);
+
+const containerStyles = cx(
+  CLASSES.marquee.container,
+  "w-full overflow-hidden whitespace-nowrap",
+  className
+);
+
+const railStyles = cx(
+  CLASSES.marquee.rail,
+  "inline-flex min-w-full flex-unset text-hidden gap-x-4"
+);
 ---
 
-<div
-  class={cx(
-    CLASSES.marquee.container,
-    "w-full overflow-hidden whitespace-nowrap"
-  )}
->
-  {
-    items.map(({ text, direction }) => (
-      <div class={cx(CLASSES.marquee.track, "flex")}>
-        <div
-          class={cx(
-            CLASSES.marquee.rail,
-            "inline-flex min-w-full flex-unset text-hidden gap-x-4"
-          )}
-          aria-hidden="true"
-          data-direction={direction}
-        >
-          {textPlaceholder.map(() => (
-            <Typography type="3xl" className="uppercase inline-block">
-              {text}
-            </Typography>
-          ))}
-        </div>
-      </div>
-    ))
-  }
+<div class={containerStyles} data-direction={direction} data-rate={rate}>
+  <div class={cx(CLASSES.marquee.track, "flex")}>
+    <div class={railStyles} aria-hidden="true">
+      {
+        placeholders.map(() => (
+          <Typography type="3xl" className="uppercase inline-block">
+            <slot />
+          </Typography>
+        ))
+      }
+    </div>
+  </div>
 </div>
