@@ -23,6 +23,7 @@ module.exports = {
       fontSize: {
         hidden: "0px",
         "10xl": "9vw",
+        "12xl": "11vw",
       },
       flex: {
         unset: "0 0 auto",
