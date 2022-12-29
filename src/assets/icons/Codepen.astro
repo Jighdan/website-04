@@ -2,16 +2,11 @@
 import cx from "classnames";
 
 export interface Props {
-  size?: "sm" | "lg";
   className?: string;
 }
 
-const { size = "sm", className } = Astro.props;
-
-const styles = cx(className, {
-  "w-6 h-6": size === "sm",
-  "w-9 h-9": size === "lg",
-});
+const { className } = Astro.props;
+const styles = cx(className, "w-6 lg:w-9 h-6 lg:h-9");
 ---
 
 <svg class={styles} viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
