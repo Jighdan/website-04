@@ -2,10 +2,37 @@
 import Section from "components/atoms/Section.astro";
 import Typography from "components/atoms/Typography.astro";
 import Arrows from "components/molecules/Arrows.astro";
+import { LINKS } from "constants/links";
+import Link from "components/atoms/Link.astro";
+import IconGithub from "assets/icons/Github.astro";
+import IconEmail from "assets/icons/Email.astro";
+import IconLinkedIn from "assets/icons/LinkedIn.astro";
+import IconCodepen from "assets/icons/Codepen.astro";
+import IconPaper from "assets/icons/Paper.astro";
 ---
 
-<Section isContentCentered>
-  <Typography type="3xl">Reinny Almonte</Typography>
+<Section hasHorizontalPadding hasVerticalPadding isContentCentered>
+  <div class="flex flex-col items-center gap-y-12 self-end">
+    <Typography type="4xl" className="">Reinny Almonte</Typography>
+
+    <nav>
+      <ul class="flex items-center gap-x-4 lg:gap-x-8">
+        {
+          Object.entries(LINKS).map(([key, href]) => (
+            <li>
+              <Link href={href} isExternal>
+                {key === "codepen" && <IconCodepen />}
+                {key === "email" && <IconEmail />}
+                {key === "github" && <IconGithub />}
+                {key === "linkedIn" && <IconLinkedIn />}
+                {key === "resume" && <IconPaper />}
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
 
   <div class="flex flex-col items-center gap-y-4">
     <Typography type="p" className="lowercase text-gray">
