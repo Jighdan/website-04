@@ -1,0 +1,25 @@
+---
+import cx from "classnames";
+
+export interface Props {
+  className?: string;
+  hasHorizontalPadding?: boolean;
+  hasVerticalPadding?: boolean;
+  isContentCentered?: boolean;
+}
+
+const {
+  className,
+  hasHorizontalPadding = false,
+  hasVerticalPadding = false,
+  isContentCentered,
+} = Astro.props;
+
+const styles = cx("min-h-screen", {
+  "px-6 lg:px-24": hasHorizontalPadding,
+  "py-6 lg:py-24": hasVerticalPadding,
+  "grid place-items-center": isContentCentered,
+});
+---
+
+<section class={cx(styles, className)}><slot /></section>
