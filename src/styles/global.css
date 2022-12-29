@@ -6,3 +6,7 @@ body {
 body {
   @apply font-serif text-black bg-white;
 }
+
+h1 {
+  @apply m-0;
+}
