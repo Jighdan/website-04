@@ -8,6 +8,11 @@ module.exports = {
       sans: ["fira-code", ...defaultTheme.fontFamily.sans],
       serif: ["lato", ...defaultTheme.fontFamily.serif],
     },
+    colors: {
+      black: "#212529",
+      gray: "#CED4DA",
+      white: "#F8F9FA",
+    },
     extend: {
       fontSize: {
         hidden: "0px",
