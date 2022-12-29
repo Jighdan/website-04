@@ -1,0 +1,21 @@
+---
+import cx from "classnames";
+
+export interface Props {
+  size?: "sm" | "lg";
+  className?: string;
+}
+
+const { size = "sm", className } = Astro.props;
+
+const styles = cx(className, {
+  "w-6 h-6": size === "sm",
+  "w-9 h-9": size === "lg",
+});
+---
+
+<svg class={styles} viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M28.5 0H7.5C3.3585 0 0 3.3585 0 7.5V28.5C0 32.6415 3.3585 36 7.5 36H28.5C32.643 36 36 32.6415 36 28.5V7.5C36 3.3585 32.643 0 28.5 0ZM12 28.5H7.5V12H12V28.5ZM9.75 10.098C8.301 10.098 7.125 8.913 7.125 7.452C7.125 5.991 8.301 4.806 9.75 4.806C11.199 4.806 12.375 5.991 12.375 7.452C12.375 8.913 11.2005 10.098 9.75 10.098ZM30 28.5H25.5V20.094C25.5 15.042 19.5 15.4245 19.5 20.094V28.5H15V12H19.5V14.6475C21.594 10.7685 30 10.482 30 18.3615V28.5Z"
+  ></path>
+</svg>
