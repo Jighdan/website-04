@@ -1,0 +1,26 @@
+---
+import Section from "components/atoms/Section.astro";
+import Marquee from "components/organisms/Marquee.astro";
+---
+
+<Section isContentCentered>
+  <Marquee
+    items={[
+      { text: "Reinny Almonte ·", direction: "forward" },
+      { text: "Reinny Almonte ·", direction: "reverse" },
+    ]}
+  />
+
+  <Marquee
+    items={[
+      {
+        text: "Back-end developer · Software Craftsman · Creative Developer ·",
+        direction: "reverse",
+      },
+      {
+        text: "Full-stack developer · Front-End Developer · Software Engineer ·",
+        direction: "forward",
+      },
+    ]}
+  />
+</Section>
