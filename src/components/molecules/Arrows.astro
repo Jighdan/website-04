@@ -1,0 +1,13 @@
+---
+import cx from "classnames";
+import IconArrow from "assets/icons/Arrow.astro";
+import { CLASSES } from "constants/classes";
+
+const styles = cx("flex flex-col items-center", CLASSES.arrow.container);
+---
+
+<div class={styles} role="button">
+  <IconArrow size="sm" />
+  <IconArrow size="md" />
+  <IconArrow size="lg" />
+</div>

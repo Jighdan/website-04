@@ -1,4 +1,7 @@
 export const CLASSES = {
+	arrow: {
+		container: 'arrow'
+	},
 	marquee: {
 		container: 'marquee',
 		track: 'marquee-track',

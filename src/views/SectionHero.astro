@@ -1,6 +1,8 @@
 ---
 import Section from "components/atoms/Section.astro";
 import Marquee from "components/organisms/Marquee.astro";
+import Typography from "components/atoms/Typography.astro";
+import Arrows from "components/molecules/Arrows.astro";
 ---
 
 <Section isContentCentered>
@@ -10,6 +12,10 @@ import Marquee from "components/organisms/Marquee.astro";
       { text: "Reinny Almonte ·", direction: "reverse" },
     ]}
   />
+
+  <Typography type="lg" className="text-gray"
+    >a lifetime apprentice seeking constant improvement</Typography
+  >
 
   <Marquee
     items={[
@@ -23,4 +29,11 @@ import Marquee from "components/organisms/Marquee.astro";
       },
     ]}
   />
+
+  <div class="flex flex-col items-center gap-y-4">
+    <Typography type="p" className="lowercase text-gray">scroll down</Typography
+    >
+
+    <Arrows />
+  </div>
 </Section>
