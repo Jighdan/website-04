@@ -1,4 +1,10 @@
 export const CLASSES = {
+	section: {
+		withParallaxImages: 'section-with-parallax-images'
+	},
+	parallaxImage: {
+		container: 'parallax-image-container'
+	},
 	arrow: {
 		container: 'arrow'
 	},

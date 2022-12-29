@@ -1,24 +1,28 @@
 ---
 import cx from "classnames";
+import { CLASSES } from "constants/classes";
 
 export interface Props {
   className?: string;
   hasHorizontalPadding?: boolean;
   hasVerticalPadding?: boolean;
   isContentCentered?: boolean;
+  hasParallaxImages?: boolean;
 }
 
 const {
   className,
   hasHorizontalPadding = false,
   hasVerticalPadding = false,
-  isContentCentered,
+  isContentCentered = false,
+  hasParallaxImages = false,
 } = Astro.props;
 
 const styles = cx("min-h-screen", {
   "px-6 lg:px-24": hasHorizontalPadding,
-  "py-6 lg:py-24": hasVerticalPadding,
+  "py-6 lg:py-16": hasVerticalPadding,
   "grid place-items-center": isContentCentered,
+  [CLASSES.section.withParallaxImages]: hasParallaxImages,
 });
 ---
 

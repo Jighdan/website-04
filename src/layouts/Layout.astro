@@ -14,24 +14,8 @@ import "styles/fonts.css";
     <title>Reinny Almonte</title>
   </head>
   <body>
-    <div>
-      <slot />
-    </div>
+    <slot />
 
-    <style is:global>
-      html {
-        font-family: system-ui, sans-serif;
-        background-color: #f6f6f6;
-        color: black;
-      }
-
-      html,
-      body {
-        height: 100%;
-        width: 100%;
-      }
-    </style>
+    <script src="../animations/use-animations.ts"></script>
   </body>
-
-  <script src="../animations/use-animations.ts"></script>
 </html>
