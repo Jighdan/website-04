@@ -1,0 +1,23 @@
+---
+import Section from "components/atoms/Section.astro";
+import Marquee from "components/organisms/Marquee.astro";
+import Typography from "components/atoms/Typography.astro";
+---
+
+<Section isContentCentered>
+  <Marquee>Software Craftsman · Creative Developer ·</Marquee>
+
+  <Marquee direction="reverse" className="self-start"
+    >Full-stack developer · Software Engineer ·</Marquee
+  >
+
+  <Typography type="lg" className="text-gray flex-1"
+    >a lifetime apprentice seeking constant improvement</Typography
+  >
+
+  <Marquee direction="reverse">Curious Human · Software Apprentice ·</Marquee>
+
+  <Marquee className="self-start"
+    >Back-end developer · Front-End Developer ·</Marquee
+  >
+</Section>

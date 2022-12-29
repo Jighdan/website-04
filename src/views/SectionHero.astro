@@ -1,34 +1,11 @@
 ---
 import Section from "components/atoms/Section.astro";
-import Marquee from "components/organisms/Marquee.astro";
 import Typography from "components/atoms/Typography.astro";
 import Arrows from "components/molecules/Arrows.astro";
 ---
 
 <Section isContentCentered>
-  <Marquee
-    items={[
-      { text: "Reinny Almonte ·", direction: "forward" },
-      { text: "Reinny Almonte ·", direction: "reverse" },
-    ]}
-  />
-
-  <Typography type="lg" className="text-gray"
-    >a lifetime apprentice seeking constant improvement</Typography
-  >
-
-  <Marquee
-    items={[
-      {
-        text: "Back-end developer · Software Craftsman · Creative Developer ·",
-        direction: "reverse",
-      },
-      {
-        text: "Full-stack developer · Front-End Developer · Software Engineer ·",
-        direction: "forward",
-      },
-    ]}
-  />
+  <Typography type="3xl">Reinny Almonte</Typography>
 
   <div class="flex flex-col items-center gap-y-4">
     <Typography type="p" className="lowercase text-gray">

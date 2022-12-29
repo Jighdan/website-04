@@ -3,37 +3,46 @@ import { gsap } from 'gsap';
 import type { Animation } from "interfaces/animation";
 
 export class MarqueeAnimations implements Animation {
-	private directionAttribute = 'data-direction';
-	private rate = 200;
 	private selectors = {
 		container: `.${CLASSES.marquee.container}`,
 		track: `.${CLASSES.marquee.track}`,
 		rail: `.${CLASSES.marquee.rail}`
 	};
 
+	private attributes = {
+		direction: 'data-direction',
+		rate: 'data-rate'
+	};
+
+	private fallBackRate = 200;
+
 	public useAnimation = () => {
-		gsap.utils.toArray<HTMLElement>(this.selectors.track).forEach((track) => {
-			const rail = track.querySelector(this.selectors.rail);
+		gsap.utils.toArray<HTMLElement>(this.selectors.container).forEach((container) => {
+			const track = container?.querySelector(this.selectors.track);
+			const rail = track?.querySelector(this.selectors.rail);
 			const text = rail?.children.item(0);
 
-			const direction = rail?.getAttribute(this.directionAttribute);
-			const willMoveForward = direction === "forward";
+			if (track && rail && text) {
+				const direction = container.getAttribute(this.attributes.direction);
+				const rate = this.getRate(container);
+				const willMoveForward = direction === "forward";
 
-			const distance = rail && text ? this.getDistanceToTranslate(text, rail) : 0;
-			const time = distance / this.rate;
+				const distance = rail && text ? this.getDistanceToTranslate(text, rail) : 0;
+				const time = distance / rate;
 
-			const tween = gsap
-				.to(track, {
-					x: `-${distance}`,
-					duration: time,
-					repeat: -1,
-					ease: "none"
-				})
-				.totalProgress(0.5);
+				const tween = gsap
+					.to(track, {
+						x: `-${distance}`,
+						duration: time,
+						repeat: -1,
+						ease: "none"
+					})
+					.totalProgress(0.5);
 
-			gsap.to(tween, {
-				timeScale: willMoveForward ? 1 : -1
-			});
+				gsap.to(tween, {
+					timeScale: willMoveForward ? 1 : -1
+				});
+			}
 		});
 	}
 
@@ -47,5 +56,11 @@ export class MarqueeAnimations implements Animation {
 		const spacing = parseInt(spacingProperty, 10);
 
 		return width + spacing;
+	}
+
+	private getRate = (container: HTMLElement): number => {
+		const attributeValue = container.getAttribute(this.attributes.rate);
+
+		return !!attributeValue ? parseInt(attributeValue) : this.fallBackRate;
 	}
 }
