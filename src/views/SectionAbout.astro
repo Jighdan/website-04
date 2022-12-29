@@ -1,0 +1,37 @@
+---
+import Section from "components/atoms/Section.astro";
+import ParallaxImage from "components/atoms/ParallaxImage.astro";
+import imageSource from "assets/images/me-with-su.webp";
+import Typography from "components/atoms/Typography.astro";
+---
+
+<Section
+  hasVerticalPadding
+  hasHorizontalPadding
+  hasParallaxImages
+  isContentCentered
+>
+  <div class="flex justify-center items-center gap-x-2 md:gap-x-4 lg:gap-x-8">
+    <ParallaxImage src={imageSource} alt="Picture of me with Susanka" />
+
+    <article class="flex-1 basis-1/4">
+      <Typography type="2xl">whoami</Typography>
+
+      <div class="flex flex-col gap-y-2">
+        <Typography>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
+          architecto nostrum quo exercitationem iste ab cumque unde rem cum
+          labore officiis consectetur quibusdam, suscipit fugiat explicabo porro
+          eum similique eos.</Typography
+        >
+
+        <Typography>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
+          architecto nostrum quo exercitationem iste ab cumque unde rem cum
+          labore officiis consectetur quibusdam, suscipit fugiat explicabo porro
+          eum similique eos.</Typography
+        >
+      </div>
+    </article>
+  </div>
+</Section>

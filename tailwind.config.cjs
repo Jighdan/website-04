@@ -9,11 +9,15 @@ module.exports = {
       serif: ["lato", ...defaultTheme.fontFamily.serif],
     },
     colors: {
+      transparent: "transparent",
       black: "#212529",
       gray: "#CED4DA",
       white: "#F8F9FA",
     },
     extend: {
+      spacing: {
+        "8/4": "150%",
+      },
       fontSize: {
         hidden: "0px",
         "10xl": "9vw",

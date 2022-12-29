@@ -1,3 +1,3 @@
 export interface Animation {
-	useAnimation(): void;
+	useAnimation: () => void;
 }

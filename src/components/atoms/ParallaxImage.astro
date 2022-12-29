@@ -1,0 +1,26 @@
+---
+import cx from "classnames";
+import { CLASSES } from "constants/classes";
+
+export interface Props {
+  src: string;
+  alt: string;
+  width?: string;
+  height?: string;
+}
+
+const { src, alt } = Astro.props;
+
+const styles = cx(
+  "bg-transparent overflow-hidden relative z-1 h-[40vw] w-[30vw]",
+  CLASSES.parallaxImage.container
+);
+---
+
+<div class={styles}>
+  <img
+    src={src}
+    alt={alt}
+    class="absolute h-8/4 w-auto -top-2/4 left-0 object-cover object-center"
+  />
+</div>

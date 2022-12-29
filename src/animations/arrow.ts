@@ -15,7 +15,7 @@ export class ArrowAnimations implements Animation {
 		let timeline = gsap.timeline({
 			repeat: -1,
 			yoyo: true,
-			defaults: { duration: 1, ease: "none" }
+			defaults: { duration: 0.75, ease: "none" }
 		});
 
 		timeline
