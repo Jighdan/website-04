@@ -1,7 +1,8 @@
 import type { Animation } from "interfaces/animation";
-import { MarqueeAnimations } from "./marquee";
+import { MarqueeAnimations } from "animations/marquee";
+import { ArrowAnimations } from 'animations/arrow';
 
-const animations: Animation[] = [new MarqueeAnimations()];
+const animations: Animation[] = [new MarqueeAnimations(), new ArrowAnimations()];
 
 window.addEventListener('load', () => {
 	animations.forEach(animation => {
