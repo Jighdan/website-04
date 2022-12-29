@@ -8,6 +8,7 @@ export interface Props {
   hasVerticalPadding?: boolean;
   isContentCentered?: boolean;
   hasParallaxImages?: boolean;
+  hasRotatingImages?: boolean;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   hasVerticalPadding = false,
   isContentCentered = false,
   hasParallaxImages = false,
+  hasRotatingImages = false,
 } = Astro.props;
 
 const styles = cx("min-h-screen", {
@@ -23,6 +25,8 @@ const styles = cx("min-h-screen", {
   "py-6 lg:py-16": hasVerticalPadding,
   "grid place-items-center": isContentCentered,
   [CLASSES.section.withParallaxImages]: hasParallaxImages,
+  [CLASSES.section.withRotatingImages]: hasRotatingImages,
+  "z-10 perspective-lg": hasRotatingImages,
 });
 ---
 
