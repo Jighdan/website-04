@@ -5,14 +5,16 @@ import { CLASSES } from "constants/classes";
 export interface Props {
   src: string;
   alt: string;
-  width?: string;
-  height?: string;
+  width: string;
+  height: string;
 }
 
-const { src, alt } = Astro.props;
+const { src, alt, width, height } = Astro.props;
 
 const styles = cx(
-  "bg-transparent overflow-hidden relative z-1 h-[40vw] w-[30vw]",
+  `w-[${width}]`,
+  `h-[${height}]`,
+  "bg-transparent overflow-hidden relative z-1",
   CLASSES.parallaxImage.container
 );
 ---
