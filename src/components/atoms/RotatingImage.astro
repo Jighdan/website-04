@@ -1,0 +1,56 @@
+---
+import cx from "classnames";
+import { CLASSES } from "constants/classes";
+
+export interface Props {
+  src: string;
+  alt: string;
+  className: string;
+  duration?: number;
+  positionOffset?: number;
+  rotationX?: number;
+  rotationY?: number;
+  transformationX?: number;
+  transformationY?: number;
+  skew?: number;
+  aggregate?: number;
+}
+
+const {
+  src,
+  alt,
+  className,
+  duration = 1.5,
+  positionOffset = 0.5,
+  rotationX = 30,
+  rotationY = 20,
+  transformationX = 30,
+  transformationY = 20,
+  skew = 1.5,
+  aggregate = 0.5,
+} = Astro.props;
+
+const styles = cx(
+  className,
+  "aspect-auto bg-transparent pointer-events-none",
+  CLASSES.rotatingImage.container
+);
+---
+
+<div
+  class={styles}
+  data-duration={duration}
+  data-position-offset={positionOffset}
+  data-rotation-x={rotationX}
+  data-rotation-y={rotationY}
+  data-transformation-x={transformationX}
+  data-transofmation-y={transformationY}
+  data-skew={skew}
+  data-aggregate={aggregate}
+>
+  <img
+    src={src}
+    alt={alt}
+    class="absolute top-0 left-0 w-full h-full object-cover object-center"
+  />
+</div>
