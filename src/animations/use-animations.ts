@@ -6,10 +6,11 @@ import { ArrowAnimations } from 'animations/arrow';
 import { ParallaxImageAnimations } from 'animations/parallax-images';
 import { RotatingImageAnimations } from 'animations/rotating-images';
 import { RevealingTextAnimations } from "animations/revealing-text";
+import { PinnedContentAnimations } from "animations/pinned-content";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const animations: Animation[] = [new MarqueeAnimations(), new ArrowAnimations(), new ParallaxImageAnimations(), new RotatingImageAnimations(), new RevealingTextAnimations()];
+const animations: Animation[] = [new MarqueeAnimations(), new ArrowAnimations(), new ParallaxImageAnimations(), new RotatingImageAnimations(), new RevealingTextAnimations(), new PinnedContentAnimations()];
 
 window.addEventListener('load', () => {
 	animations.forEach(animation => {

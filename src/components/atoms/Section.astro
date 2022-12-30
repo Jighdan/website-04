@@ -9,6 +9,7 @@ export interface Props {
   isContentCentered?: boolean;
   hasParallaxImages?: boolean;
   hasRotatingImages?: boolean;
+  hasPinnedContent?: boolean;
 }
 
 const {
@@ -18,12 +19,14 @@ const {
   isContentCentered = false,
   hasParallaxImages = false,
   hasRotatingImages = false,
+  hasPinnedContent = false,
 } = Astro.props;
 
 const styles = cx("min-h-screen", {
   "px-6 lg:px-24": hasHorizontalPadding,
   "py-6 lg:py-16": hasVerticalPadding,
   "grid place-items-center": isContentCentered,
+  [CLASSES.section.withPinnedContent]: hasPinnedContent,
   [CLASSES.section.withParallaxImages]: hasParallaxImages,
   [CLASSES.section.withRotatingImages]: hasRotatingImages,
   "z-10 perspective-lg": hasRotatingImages,
