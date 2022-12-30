@@ -22,7 +22,7 @@ const {
   hasPinnedContent = false,
 } = Astro.props;
 
-const styles = cx("min-h-screen", {
+const styles = cx(className, "min-h-screen", {
   "px-6 lg:px-24": hasHorizontalPadding,
   "py-6 lg:py-16": hasVerticalPadding,
   "grid place-items-center": isContentCentered,
@@ -33,4 +33,4 @@ const styles = cx("min-h-screen", {
 });
 ---
 
-<section class={cx(styles, className)}><slot /></section>
+<section class={styles}><slot /></section>
