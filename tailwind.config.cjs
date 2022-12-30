@@ -23,12 +23,15 @@ module.exports = {
       },
       fontSize: {
         hidden: "0px",
-        "9.5xl": "5vw",
+        "9.5xl": "7.5vw",
         "10xl": "9vw",
         "12xl": "11vw",
       },
       flex: {
         unset: "0 0 auto",
+      },
+      minHeight: {
+        "screen-3": "300vh",
       },
     },
   },
