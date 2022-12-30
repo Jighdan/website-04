@@ -1,0 +1,26 @@
+---
+import Section from "components/atoms/Section.astro";
+import Typography from "components/atoms/Typography.astro";
+import { CLASSES } from "constants/classes";
+
+const fadingClass = CLASSES.fadingText.text;
+---
+
+<Section
+  className="bg-black text-white min-h-[300vh]"
+  hasPinnedContent
+  hasHorizontalPadding
+  hasVerticalPadding
+>
+  <div>
+    <div class="max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
+      <Typography type="2xl" className="font-medium"
+        ><span class={fadingClass}>"I believe&nbsp;</span>anything can be done
+        better<span class={fadingClass}>, and so, I'm&nbsp;</span>seeking
+        constant improvement<span class={fadingClass}
+          >&nbsp;in diverse aspects of my life."</span
+        >
+      </Typography>
+    </div>
+  </div>
+</Section>

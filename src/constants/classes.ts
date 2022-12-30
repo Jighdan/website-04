@@ -1,7 +1,8 @@
 export const CLASSES = {
 	section: {
 		withParallaxImages: 'section-with-parallax-images',
-		withRotatingImages: 'section-with-rotating-images'
+		withRotatingImages: 'section-with-rotating-images',
+		withPinnedContent: 'section-with-pinned-content'
 	},
 	parallaxImage: {
 		container: 'parallax-image-container'
@@ -22,5 +23,8 @@ export const CLASSES = {
 		text: 'revealing-text',
 		highlightedText: 'revealing-text-highlighted',
 		line: 'revealing-text-line'
+	},
+	fadingText: {
+		text: 'fading-text'
 	}
 }

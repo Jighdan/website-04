@@ -1,7 +1,7 @@
 ---
 import cx from "classnames";
 
-type Variant = "4xl" | "3xl" | "2xl" | "lg" | "p";
+type Variant = "4xl" | "3xl" | "2xl" | "xl" | "lg" | "p";
 type Element = "h1" | "h2" | "h3" | "p" | "span";
 
 export interface Props {
@@ -15,17 +15,22 @@ const elementMap: Map<Variant, Element> = new Map([
   ["4xl", "h1"],
   ["3xl", "span"],
   ["2xl", "h2"],
+  ["xl", "span"],
   ["lg", "h3"],
   ["p", "p"],
 ]);
 
-const styles = cx(className, {
-  "font-sans text-12xl font-medium leading-none": type === "4xl",
-  "font-sans text-10xl font-medium leading-none": type === "3xl",
-  "text-6xl": type === "2xl",
-  "text-4xl": type === "lg",
-  "text-xl": type === "p",
-});
+const styles = cx(
+  {
+    "font-sans text-12xl font-medium leading-none": type === "4xl",
+    "font-sans text-10xl font-medium leading-none": type === "3xl",
+    "font-sans text-9.5xl leading-none": type === "2xl",
+    "text-6xl": type === "xl",
+    "text-4xl": type === "lg",
+    "text-xl": type === "p",
+  },
+  className
+);
 
 const Element = elementMap.get(type) || type;
 ---
