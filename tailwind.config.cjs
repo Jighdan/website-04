@@ -38,7 +38,7 @@ module.exports = {
     plugin(({ addUtilities }) => {
       addUtilities({
         ".perspective": {
-          perspective: "1000px",
+          perspective: "1000rem",
         },
       });
     }),
