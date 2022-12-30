@@ -16,5 +16,11 @@ export const CLASSES = {
 		container: 'marquee',
 		track: 'marquee-track',
 		rail: 'marquee-rail'
+	},
+	revealingText: {
+		container: 'revealing-text-container',
+		text: 'revealing-text',
+		highlightedText: 'revealing-text-highlighted',
+		line: 'revealing-text-line'
 	}
 }

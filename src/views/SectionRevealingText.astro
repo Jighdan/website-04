@@ -1,0 +1,42 @@
+---
+import { CLASSES } from "constants/classes";
+import cx from "classnames";
+import Section from "components/atoms/Section.astro";
+import Typography from "components/atoms/Typography.astro";
+
+const texts = ["Now, ", "what does", "this person", "cares about?"];
+
+const containerStyles = cx("flex flex-col", CLASSES.revealingText.container);
+
+const textStyles = cx("opacity-75 text-gray", CLASSES.revealingText.text);
+
+const highlightedTextStyles = cx(
+  "opacity-0",
+  CLASSES.revealingText.highlightedText
+);
+
+const lineStyles = cx(
+  "relative w-0 h-1.5 bg-gray inline-block opacity-0",
+  CLASSES.revealingText.line
+);
+---
+
+<Section hasHorizontalPadding hasVerticalPadding>
+  <div class={containerStyles}>
+    {
+      texts.map((text) => (
+        <Typography type="3xl" className={textStyles}>
+          {text}
+        </Typography>
+      ))
+    }
+
+    <div class="self-end">
+      <Typography type="3xl" className={highlightedTextStyles}
+        >many things.</Typography
+      >
+
+      <span class={lineStyles}></span>
+    </div>
+  </div>
+</Section>
