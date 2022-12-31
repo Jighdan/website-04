@@ -1,6 +1,6 @@
 import { CLASSES } from "constants/classes";
 import { gsap } from 'gsap';
-import type { Animation } from "interfaces/animation";
+import type { Animation } from "animations/interfaces";
 
 export class MarqueeAnimations implements Animation {
 	private selectors = {
