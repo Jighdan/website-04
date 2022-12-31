@@ -10,3 +10,9 @@ body {
 h1 {
   @apply m-0;
 }
+
+[data-scroll-container],
+[data-scroll-section] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}

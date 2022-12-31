@@ -1,5 +1,6 @@
 ---
 import "normalize.css";
+import "locomotive-scroll/dist/locomotive-scroll.css";
 import "styles/global.css";
 import "styles/fonts.css";
 ---
@@ -14,7 +15,7 @@ import "styles/fonts.css";
     <title>Reinny Almonte</title>
   </head>
   <body>
-    <div class="scroll-smooth">
+    <div data-scroll-container>
       <slot />
     </div>
 
