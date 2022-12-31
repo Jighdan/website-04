@@ -29,6 +29,7 @@
     "gsap": "^3.11.4",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "locomotive-scroll": "^4.1.4",
     "normalize.css": "^8.0.1",
     "prettier": "2.7.1"
   },
