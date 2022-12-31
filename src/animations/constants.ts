@@ -1,0 +1,1 @@
+export const SCROLLER_SELECTOR = '[data-scroll-container]';

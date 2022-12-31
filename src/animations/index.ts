@@ -1,10 +1,12 @@
 import { ANIMATIONS } from "animations/custom";
-import "animations/config";
+import { initializeLocomotive } from "animations/config";
 
 const initializeAnimations = () => {
+	initializeLocomotive();
+
 	ANIMATIONS.forEach(animation => {
 		animation.useAnimation();
 	})
 }
 
-window.addEventListener('load', initializeAnimations);
+window.addEventListener('DOMContentLoaded', initializeAnimations);
