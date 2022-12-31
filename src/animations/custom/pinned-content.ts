@@ -2,6 +2,7 @@ import { CLASSES } from "constants/classes";
 import { gsap } from 'gsap';
 import type { Animation } from "animations/interfaces";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { SCROLLER_SELECTOR } from 'animations/constants';
 
 export class PinnedContentAnimations implements Animation {
 	private selectors = {
@@ -22,7 +23,8 @@ export class PinnedContentAnimations implements Animation {
 				trigger: section,
 				start: "top top",
 				end: "bottom 150px",
-				pin: section.firstElementChild
+				pin: section.firstElementChild,
+				scroller: SCROLLER_SELECTOR
 			});
 		};
 	};
