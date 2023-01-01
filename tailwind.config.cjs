@@ -23,7 +23,7 @@ module.exports = {
       },
       fontSize: {
         hidden: "0px",
-        "9.5xl": "7.5vw",
+        "9.5xl": "6vw",
         "10xl": "9vw",
         "12xl": "11vw",
       },
