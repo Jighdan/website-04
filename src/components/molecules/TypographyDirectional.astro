@@ -1,0 +1,38 @@
+---
+import cx from "classnames";
+import type TypographyProps from "components/atoms/Typography.astro";
+import Typography from "components/atoms/Typography.astro";
+
+type PrimitiveProps = Parameters<typeof TypographyProps>[0];
+
+export interface Props extends PrimitiveProps {
+  speed?: number;
+  delay?: number;
+  scrollTarget: string;
+}
+
+const {
+  type = "3xl",
+  className,
+  speed = 1,
+  delay = 0.1,
+  scrollTarget,
+} = Astro.props;
+
+const styles = cx("relative w-fit whitespace-nowrap", className);
+---
+
+<div class={styles}>
+  <span
+    class="w-fit block overflow-x-visible py-1 px-2 bg-black text-white whitespace-nowrap"
+    data-scroll
+    data-scroll-target={scrollTarget}
+    data-scroll-direction="horizontal"
+    data-scroll-speed={speed.toString()}
+    data-scroll-delay={delay.toString()}
+  >
+    <Typography type={type} className="uppercase font-medium">
+      <slot />
+    </Typography>
+  </span>
+</div>
