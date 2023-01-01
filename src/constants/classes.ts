@@ -26,5 +26,6 @@ export const CLASSES = {
 	},
 	fadingText: {
 		text: 'fading-text'
-	}
+	},
+	scalingText: 'scaling-text'
 }
