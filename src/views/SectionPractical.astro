@@ -1,8 +1,52 @@
 ---
 import Section from "components/atoms/Section.astro";
-import DirectionalQuotes from "components/templates/DirectionalQuotes.astro";
+import DirectionalTexts from "components/organisms/DirectionalTexts.astro";
+
+type DirectionalTextProps = Parameters<typeof DirectionalTexts>[0];
+
+const items: DirectionalTextProps["items"] = [
+  {
+    text: "love the beach",
+    speed: -10,
+    styles: "rotate-16",
+  },
+  {
+    text: "runescape got me into coding",
+    speed: -26,
+    styles: "rotate-9",
+    delay: 1.6,
+  },
+  {
+    text: "appreciate good cinema",
+    speed: 32,
+    styles: "rotate-3 -translate-y-1/2",
+    delay: 1,
+  },
+  {
+    text: "thinkpads are cool",
+    speed: -16,
+    styles: "-rotate-16",
+  },
+  {
+    text: "drifing into liminal spaces",
+    speed: 30,
+    styles: "-rotate-16",
+  },
+  {
+    text: "spikeball is life",
+    speed: 10,
+    delay: 0.2,
+    styles: "-rotate-2 -translate-y-1/2",
+  },
+  {
+    text: "trying and trying",
+    speed: 45,
+    delay: 0.2,
+    styles: "-rotate-45 -translate-y-1/2",
+  },
+];
 ---
 
-<Section className="bg-gray h-screen" hasHorizontalPadding hasVerticalPadding>
-  <DirectionalQuotes />
+<Section className="bg-gray h-screen">
+  <DirectionalTexts identifier="directional-quotes" items={items} />
 </Section>
