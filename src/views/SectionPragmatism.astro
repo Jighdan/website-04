@@ -1,5 +1,4 @@
 ---
-import cx from "classnames";
 import Section from "components/atoms/Section.astro";
 import TypographyParallax from "components/molecules/TypographyParallax.astro";
 import { CLASSES } from "constants/classes";
@@ -8,7 +7,11 @@ const identifier = "parallax-questions";
 const identifierFormatted = `#${identifier}`;
 ---
 
-<Section hasHorizontalPadding hasVerticalPadding className="h-screen-6">
+<Section
+  hasHorizontalPadding
+  hasVerticalPadding
+  className="h-screen-6 bg-white z-1"
+>
   <div id={identifier} class="min-h-full flex flex-col justify-between">
     <TypographyParallax scrollTarget={identifierFormatted} className="left-1/10"
       >Ok ...</TypographyParallax
@@ -46,8 +49,8 @@ const identifierFormatted = `#${identifier}`;
       <TypographyParallax
         scrollTarget={identifierFormatted}
         type="3xl"
-        className={cx(CLASSES.scalingText, "will-change-transform")}
-        >Well ...</TypographyParallax
+        className={CLASSES.scalingText}
+        delay={1}>Well ...</TypographyParallax
       >
     </div>
   </div>

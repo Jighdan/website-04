@@ -1,5 +1,4 @@
 ---
-import cx from "classnames";
 import TypographyDirectional from "components/molecules/TypographyDirectional.astro";
 import type ITypographyDirectional from "components/molecules/TypographyDirectional.astro";
 
@@ -17,25 +16,19 @@ export interface Props {
 
 const { identifier, items } = Astro.props;
 const identifierFormatted = `#${identifier}`;
-const numberOfItems = items.length + 1;
 ---
 
-<div id={identifier} class="relative min-h-full min-w-full">
+<div id={identifier} class="relative h-full min-h-full min-w-full">
   {
-    items.map(({ text, speed, delay, styles }, index) => {
-      const topOffset = (index + 1) * numberOfItems;
-      const className = cx(styles, `top-[${topOffset}]`);
-
-      return (
-        <TypographyDirectional
-          scrollTarget={identifierFormatted}
-          className={className}
-          speed={speed}
-          delay={delay}
-        >
-          {text}
-        </TypographyDirectional>
-      );
-    })
+    items.map(({ text, speed, delay, styles }) => (
+      <TypographyDirectional
+        scrollTarget={identifierFormatted}
+        className={styles}
+        speed={speed}
+        delay={delay}
+      >
+        {text}
+      </TypographyDirectional>
+    ))
   }
 </div>
