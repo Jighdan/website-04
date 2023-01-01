@@ -20,6 +20,10 @@ module.exports = {
         4.5: "1.125rem",
         7.5: "1.875rem",
         "8/4": "150%",
+        "1/10": "10%",
+        "2/10": "20%",
+        "3/10": "30%",
+        "4/10": "40%",
       },
       fontSize: {
         hidden: "0px",
@@ -30,6 +34,9 @@ module.exports = {
       },
       flex: {
         unset: "0 0 auto",
+      },
+      height: {
+        "screen-6": "600vh",
       },
       minHeight: {
         "screen-2": "200vh",

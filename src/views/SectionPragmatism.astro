@@ -1,0 +1,54 @@
+---
+import cx from "classnames";
+import Section from "components/atoms/Section.astro";
+import TypographyParallax from "components/molecules/TypographyParallax.astro";
+import { CLASSES } from "constants/classes";
+
+const identifier = "parallax-questions";
+const identifierFormatted = `#${identifier}`;
+---
+
+<Section hasHorizontalPadding hasVerticalPadding className="h-screen-6">
+  <div id={identifier} class="min-h-full flex flex-col justify-between">
+    <TypographyParallax scrollTarget={identifierFormatted} className="left-1/10"
+      >Ok ...</TypographyParallax
+    >
+
+    <TypographyParallax scrollTarget={identifierFormatted} className="left-3/10"
+      >but I mean ...</TypographyParallax
+    >
+
+    <TypographyParallax
+      scrollTarget={identifierFormatted}
+      speed={2}
+      delay={0.2}
+      className="left-2/10">like ...</TypographyParallax
+    >
+
+    <TypographyParallax scrollTarget={identifierFormatted} delay={0.3}
+      >what does it looks like from ...</TypographyParallax
+    >
+
+    <TypographyParallax
+      scrollTarget={identifierFormatted}
+      speed={4}
+      delay={0.5}
+      className="-right-2/10">what's the word? ...</TypographyParallax
+    >
+
+    <TypographyParallax
+      scrollTarget={identifierFormatted}
+      delay={0.7}
+      className="-right-4/10">from a pragmatic perspective</TypographyParallax
+    >
+
+    <div class="flex h-1/6 w-full justify-center items-center">
+      <TypographyParallax
+        scrollTarget={identifierFormatted}
+        type="3xl"
+        className={cx(CLASSES.scalingText, "will-change-transform")}
+        >Well ...</TypographyParallax
+      >
+    </div>
+  </div>
+</Section>
