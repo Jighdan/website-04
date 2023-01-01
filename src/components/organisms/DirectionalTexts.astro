@@ -1,0 +1,41 @@
+---
+import cx from "classnames";
+import TypographyDirectional from "components/molecules/TypographyDirectional.astro";
+import type ITypographyDirectional from "components/molecules/TypographyDirectional.astro";
+
+type ItemParams = Parameters<typeof ITypographyDirectional>[0];
+
+interface Items extends Pick<ItemParams, "speed" | "delay"> {
+  text: string;
+  styles?: string;
+}
+
+export interface Props {
+  identifier: string;
+  items: Items[];
+}
+
+const { identifier, items } = Astro.props;
+const identifierFormatted = `#${identifier}`;
+const numberOfItems = items.length + 1;
+---
+
+<div id={identifier} class="relative min-h-full min-w-full">
+  {
+    items.map(({ text, speed, delay, styles }, index) => {
+      const topOffset = (index + 1) * numberOfItems;
+      const className = cx(styles, `top-[${topOffset}]`);
+
+      return (
+        <TypographyDirectional
+          scrollTarget={identifierFormatted}
+          className={className}
+          speed={speed}
+          delay={delay}
+        >
+          {text}
+        </TypographyDirectional>
+      );
+    })
+  }
+</div>
