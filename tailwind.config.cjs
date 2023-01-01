@@ -31,7 +31,18 @@ module.exports = {
         unset: "0 0 auto",
       },
       minHeight: {
+        "screen-2": "200vh",
         "screen-3": "300vh",
+      },
+      rotate: {
+        9: "9deg",
+        19: "19deg",
+        26: "26deg",
+      },
+      translate: {
+        "screen-w-1/100": "1vw",
+        "screen-w-1/10": "10vw",
+        "screen-w-1/2": "50vw",
       },
     },
   },

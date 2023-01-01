@@ -1,0 +1,69 @@
+---
+import cx from "classnames";
+import Section from "components/atoms/Section.astro";
+import TypographyDirectional from "components/molecules/TypographyDirectional.astro";
+import type ITypographyDirectional from "components/molecules/TypographyDirectional.astro";
+
+type Params = Parameters<typeof ITypographyDirectional>[0];
+
+interface Item extends Pick<Params, "speed" | "delay"> {
+  text: string;
+  styles?: string;
+}
+
+const identifier = "directions";
+const identifierFormatted = `#${identifier}`;
+
+const items: Item[] = [
+  {
+    text: "aaaa bbb ccccc",
+    speed: -10,
+    styles: "rotate-16",
+  },
+  {
+    text: "And in this direction",
+    speed: 10,
+    delay: 0.2,
+  },
+  {
+    text: "Sooo customizable. Right?",
+    speed: -26,
+    styles: "rotate-9",
+    delay: 1.6,
+  },
+  {
+    text: "I can also go in this direction",
+    speed: 32,
+    styles: "rotate-3",
+    delay: 1,
+  },
+  {
+    text: "Ok, enough!!!!",
+    speed: -16,
+  },
+];
+
+const numberOfItems = items.length + 1;
+---
+
+<Section className="bg-gray h-screen" hasHorizontalPadding hasVerticalPadding>
+  <div id={identifier} class="relative min-h-full min-w-full">
+    {
+      items.map(({ text, speed, delay, styles }, index) => {
+        const topOffset = (index + 1) * numberOfItems;
+        const className = cx(styles, `top-[${topOffset}]`);
+
+        return (
+          <TypographyDirectional
+            scrollTarget={identifierFormatted}
+            className={className}
+            speed={speed}
+            delay={delay}
+          >
+            {text}
+          </TypographyDirectional>
+        );
+      })
+    }
+  </div>
+</Section>
