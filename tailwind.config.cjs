@@ -36,6 +36,7 @@ module.exports = {
         unset: "0 0 auto",
       },
       height: {
+        "screen-1.5": "150vh",
         "screen-2": "200vh",
         "screen-6": "600vh",
       },

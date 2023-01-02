@@ -19,7 +19,7 @@ const items: DirectionalTextProps["items"] = [
   {
     text: "appreciate good cinema",
     speed: 32,
-    styles: "rotate-3 -translate-y-1/2",
+    styles: "rotate-3",
     delay: 1,
   },
   {
@@ -30,23 +30,23 @@ const items: DirectionalTextProps["items"] = [
   {
     text: "drifing into liminal spaces",
     speed: 30,
-    styles: "-rotate-16",
+    styles: "-rotate-45",
   },
   {
     text: "spikeball is life",
     speed: 10,
     delay: 0.2,
-    styles: "-rotate-2 -translate-y-1/2",
+    styles: "-rotate-2",
   },
   {
     text: "trying and trying",
     speed: 45,
     delay: 0.2,
-    styles: "-rotate-45 -translate-y-1/2",
+    styles: "rotate-16",
   },
 ];
 ---
 
-<Section className="bg-gray h-screen">
+<Section className="bg-gray h-screen-1.5">
   <DirectionalTexts identifier="directional-quotes" items={items} />
 </Section>
