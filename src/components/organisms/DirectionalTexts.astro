@@ -18,7 +18,10 @@ const { identifier, items } = Astro.props;
 const identifierFormatted = `#${identifier}`;
 ---
 
-<div id={identifier} class="relative h-full min-h-full min-w-full">
+<div
+  id={identifier}
+  class="relative h-full min-h-full min-w-full flex flex-col justify-between"
+>
   {
     items.map(({ text, speed, delay, styles }) => (
       <TypographyDirectional
