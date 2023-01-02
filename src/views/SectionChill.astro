@@ -1,0 +1,40 @@
+---
+import Section from "components/atoms/Section.astro";
+import TypographyParallax from "components/molecules/TypographyParallax.astro";
+
+const identifier = "parallax-chill";
+const identifierFormatted = `#${identifier}`;
+---
+
+<Section
+  hasVerticalPadding
+  hasHorizontalPadding
+  className="h-screen-2 bg-white z-1"
+>
+  <div id={identifier} class="min-h-full flex flex-col justify-between">
+    <TypographyParallax
+      scrollTarget={identifierFormatted}
+      type="4xl"
+      speed={5}
+      className="lowercase whitespace-nowrap">ok</TypographyParallax
+    >
+
+    <TypographyParallax
+      scrollTarget={identifierFormatted}
+      type="4xl"
+      speed={0.1}
+      className="lowercase whitespace-nowrap left-1/4"
+    >
+      tranquilo ...
+    </TypographyParallax>
+
+    <TypographyParallax
+      scrollTarget={identifierFormatted}
+      type="4xl"
+      className="lowercase whitespace-nowrap right-0"
+      speed={2}
+    >
+      try again ...
+    </TypographyParallax>
+  </div>
+</Section>
